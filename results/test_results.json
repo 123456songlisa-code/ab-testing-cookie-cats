@@ -1,0 +1,94 @@
+{
+  "alpha": 0.05,
+  "n_bootstrap": 10000,
+  "retention_1": {
+    "rate_ctrl": 0.4482,
+    "rate_test": 0.4423,
+    "abs_diff_pp": -0.59,
+    "rel_lift": -0.0132,
+    "z_stat": 1.78,
+    "p_value": 0.0744,
+    "boot_ci95_pp": [
+      -1.25,
+      0.05
+    ],
+    "significant": false,
+    "ci_excludes_zero": false
+  },
+  "retention_7": {
+    "rate_ctrl": 0.1902,
+    "rate_test": 0.182,
+    "abs_diff_pp": -0.82,
+    "rel_lift": -0.0431,
+    "z_stat": 3.16,
+    "p_value": 0.0016,
+    "boot_ci95_pp": [
+      -1.33,
+      -0.31
+    ],
+    "significant": true,
+    "ci_excludes_zero": true
+  },
+  "game_rounds": {
+    "median_ctrl": 17.0,
+    "median_test": 16.0,
+    "mwu_p_value": 0.0502,
+    "note": "均值受极端值影响大，用中位数 + Mann-Whitney U 检验（对分布形态假设更少）"
+  },
+  "stratified_r7": [
+    {
+      "segment": "0轮(未上手)",
+      "n": 3994,
+      "rate_ctrl": 0.0083,
+      "rate_test": 0.0063,
+      "diff_pp": -0.19,
+      "p_value": 0.4704
+    },
+    {
+      "segment": "1-10轮",
+      "n": 31995,
+      "rate_ctrl": 0.0193,
+      "rate_test": 0.0194,
+      "diff_pp": 0.01,
+      "p_value": 0.9715
+    },
+    {
+      "segment": "11-50轮",
+      "n": 31388,
+      "rate_ctrl": 0.1203,
+      "rate_test": 0.1081,
+      "diff_pp": -1.21,
+      "p_value": 0.0007
+    },
+    {
+      "segment": "51-150轮",
+      "n": 14985,
+      "rate_ctrl": 0.4375,
+      "rate_test": 0.4057,
+      "diff_pp": -3.18,
+      "p_value": 0.0001
+    },
+    {
+      "segment": "150轮+",
+      "n": 7827,
+      "rate_ctrl": 0.7962,
+      "rate_test": 0.7973,
+      "diff_pp": 0.11,
+      "p_value": 0.8997
+    }
+  ],
+  "simpson_risk": true,
+  "decision": {
+    "recommendation": "不上线（保持 30 关设卡）",
+    "reasons": [
+      "实验组（40 关）7 日留存 18.20%，比对照组 19.02% 低 0.82pp，方向为负，统计显著（p=0.0016)；",
+      "没有任何一个子指标（1 日留存、游戏轮数）出现正向补偿；",
+      "本次实验未发现'对部分人群显著正向'的分层，不存在'只对新手有效'的补救上线方案；",
+      "SRM 轻微异常提示数据采集链路可能有噪声，但负向方向一致，不影响'不值得上线'的判断。"
+    ],
+    "caveats": [
+      "p 显著但效应量约 0.8pp，低于 1.5pp 的 MDE 上线门槛——统计显著 ≠ 业务值得；",
+      "本实验只观察了留存，未包含付费转化数据，若 40 关能显著提升内购收入，需另做实验评估。"
+    ]
+  }
+}

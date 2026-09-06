@@ -1,0 +1,24 @@
+{
+  "primary_metric": "retention_7",
+  "baseline_r7": 0.1902,
+  "baseline_r1": 0.4482,
+  "alpha": 0.05,
+  "power": 0.8,
+  "n_per_group_required": [
+    {
+      "mde_pp": 0.5,
+      "n_per_group": 97679
+    },
+    {
+      "mde_pp": 1.0,
+      "n_per_group": 24657
+    },
+    {
+      "mde_pp": 1.5,
+      "n_per_group": 11063
+    }
+  ],
+  "n_per_group_actual": 44700,
+  "mde_detectable_pp": 0.74,
+  "verdict": "实际每组 44700 人 >= 需求 11063 人，功效充足；以当前样本量最小可检出约 0.74pp 的效应"
+}

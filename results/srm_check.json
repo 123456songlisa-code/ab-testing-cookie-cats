@@ -1,0 +1,25 @@
+{
+  "n_rows": 90189,
+  "n_nulls": 0,
+  "n_dup_userid": 0,
+  "srm": {
+    "gate_30": 44700,
+    "gate_40": 45489,
+    "ratio_gate40_vs_gate30": 1.0177,
+    "chi2": 6.9,
+    "p_value": 0.0086,
+    "conclusion": "SRM 显著，分流存在异常，结论需谨慎"
+  },
+  "aa_test": {
+    "n_sims": 20,
+    "n_significant": 1,
+    "false_positive_rate": 0.05,
+    "interpretation": "接近 5% 的设计水平，分流随机性可用"
+  },
+  "game_rounds": {
+    "median": 16.0,
+    "p99": 493.0,
+    "p999": 1073.6240000000107,
+    "max": 49854.0
+  }
+}
